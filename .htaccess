@@ -1,0 +1,25 @@
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# --- Legacy /admin (menghindari 404 kalau masih ada redirect lama)
+RewriteRule ^admin/?$ /admin_full.php [L,R=302]
+
+# --- Legacy /app paths (kalau ada link lama)
+RewriteRule ^app/?$ /index.php [L,R=302]
+RewriteRule ^app/siswa\.php$ /siswa.php [L,R=302]
+RewriteRule ^app/admin_full\.php$ /admin_full.php [L,R=302]
+RewriteRule ^app/guru\.php$ /guru.php [L,R=302]
+RewriteRule ^app/admin_absensi_guru\.php$ /admin_absensi_guru.php [L,R=302]
+RewriteRule ^app/admin_tugas_guru\.php$ /admin_tugas_guru.php [L,R=302]
+RewriteRule ^app/logout\.php$ /logout.php [L,R=302]
+
+# Jangan ganggu file/folder beneran
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Fallback: semua request lain ke index (biar satu gerbang)
+RewriteRule ^ index.php [L]
+</IfModule>
