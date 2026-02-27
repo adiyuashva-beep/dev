@@ -1,0 +1,26 @@
+<?php
+/**
+ * EduGate - Local Database Config
+ *
+ * Copy file ini menjadi: config/database.local.php
+ * lalu isi credential sesuai server kamu.
+ *
+ * NOTE keamanan:
+ * - JANGAN commit file database.local.php ke repo.
+ * - Pastikan folder config tidak bisa diakses publik.
+ */
+
+// Nama database
+$db_name = 'edugate_db';
+
+// User database
+$db_user = 'edugate_user';
+
+// Password database
+$db_pass = 'ganti_password_ini';
+
+// Host database (biasanya localhost)
+$db_host = '127.0.0.1';
+
+// Opsional: port
+$db_port = 3306;

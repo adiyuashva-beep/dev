@@ -1,1 +1,1 @@
-<?php require __DIR__ . '/admin_absensi_guru.php';
+<?php require __DIR__ . '/../admin_rekap_presensi_guru.php';

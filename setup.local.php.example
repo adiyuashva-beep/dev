@@ -1,0 +1,14 @@
+<?php
+/**
+ * EduGate - Setup Protection
+ *
+ * Copy file ini menjadi: config/setup.local.php
+ * lalu ganti token.
+ *
+ * Token ini dipakai untuk membuka setup.php lewat browser:
+ *   /setup.php?token=TOKEN_KAMU
+ *
+ * Jika token kosong, setup.php hanya bisa dijalankan via CLI.
+ */
+
+$EDUGATE_SETUP_TOKEN = 'ganti_token_ini';
